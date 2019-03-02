@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Sincronizar
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="cloud-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+  <ion-list id="sincronizar-list1">
+    <ion-item-sliding *ngFor="let img of images; index as pos">
+      <ion-item color="none" id="sincronizar-list-item1">
+        <ion-thumbnail item-left>
+          <img [src]="img.path" />
+        </ion-thumbnail>
+        <h2>
+          XCV420191
+        </h2>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="assertive" (click)="deleteImage(img, pos)">
+          Excluir
+        </button>
+        <button ion-button color="positive" (click)="startUpload(img)">
+          Sincronizar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
